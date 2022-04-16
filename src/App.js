@@ -68,7 +68,6 @@ const App = () => {
               return (
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => {
-                    console.log(cell);
                     return (
                       <td
                         {...cell.getCellProps()}

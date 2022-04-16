@@ -23,42 +23,44 @@ const columnDefs = [
     Header: "Name",
     accessor: "name",
     sortType: textFilter,
+    width: 100,
   },
   {
     Header: "Price",
     accessor: "price",
     sortType,
-    width: 100,
+    width: 75,
   },
   {
     Header: "Monthly Payment",
     accessor: "balloon_payment",
     sortType,
-    width: 200,
+    width: 150,
   },
 
   {
     Header: "Rebate",
     accessor: "nyr",
     sortType,
-    width: 100,
+    width: 75,
   },
   {
     Header: "Tax Credit",
     accessor: "credit",
     sortType,
+    width: 100,
   },
   {
     Header: "Type",
     accessor: "type",
     sortType: textFilter,
-    type: 100,
+    width: 75,
   },
   {
     Header: "Vehicle Type",
     accessor: "vehicle_type",
     sortType: textFilter,
-    width: 200,
+    width: 150,
   },
 ];
 
