@@ -28,6 +28,7 @@ const columnDefs = [
     Header: "Price",
     accessor: "price",
     sortType,
+    width: 100,
   },
   {
     Header: "Monthly Payment",
@@ -40,6 +41,7 @@ const columnDefs = [
     Header: "Rebate",
     accessor: "nyr",
     sortType,
+    width: 100,
   },
   {
     Header: "Tax Credit",
@@ -50,6 +52,7 @@ const columnDefs = [
     Header: "Type",
     accessor: "type",
     sortType: textFilter,
+    type: 100,
   },
   {
     Header: "Vehicle Type",
