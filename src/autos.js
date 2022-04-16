@@ -1,10 +1,19 @@
 import React from "react";
 
-const sortType = () => (rowA, rowB, id) => {
+const getSort =
+  () =>
+  (column, ...args) => {
+    return columnDefs
+      .find((col) => column.Header === col.Header)
+      .sortType(...args);
+  };
+
+const sortType = (rowA, rowB, id) => {
+  console.log(rowA);
   return toInt(rowA.values[id]) > toInt(rowB.values[id]) ? 1 : -1;
 };
 
-const textFilter = () => (rowA, rowB, id) => {
+const textFilter = (rowA, rowB, id) => {
   return rowA.values[id] > rowB.values[id] ? 1 : -1;
 };
 
@@ -381,4 +390,4 @@ const autos = [
     balloon_payment: "$589",
   },
 ];
-export { columnDefs, autos, sortType };
+export { columnDefs, autos, sortType, getSort };

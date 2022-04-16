@@ -2,7 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import { useMemo, useState } from "react";
 import { useSortBy, useTable } from "react-table";
-import { autos, columnDefs, sortType } from "./autos";
+import { autos, columnDefs, getSort, sortType } from "./autos";
 
 const App = () => {
   const [mp, setMP] = useState(autos);
@@ -11,7 +11,7 @@ const App = () => {
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
     useTable({ columns, data: mp }, useSortBy);
 
-  const memoSortType = useMemo(sortType, [mp]);
+  const memoSortType = useMemo((col) => getSort(col), [mp]);
   return (
     <div>
       <h1 style={{ textAlign: "center", margin: 32, marginBottom: 0 }}>
@@ -33,7 +33,7 @@ const App = () => {
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => {
-                  column.sortType = memoSortType;
+                  column.sortType = (...args) => memoSortType(column, ...args);
 
                   return (
                     <th
@@ -42,11 +42,11 @@ const App = () => {
                         borderBottom: "solid 3px #c4c4c4",
                         color: "black",
                         fontWeight: "bold",
-                        minWidth: 200,
+                        minWidth: "fit-content",
                       }}
                     >
-                      {column.render("Header")}
-                      <span>
+                      <span style={{ display: "block", flexWrap: "nowrap" }}>
+                        {column.render("Header")}
                         {column.isSorted
                           ? column.isSortedDesc
                             ? " 🔽"
