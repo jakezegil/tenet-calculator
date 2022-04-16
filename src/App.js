@@ -42,7 +42,7 @@ const App = () => {
                         borderBottom: "solid 3px #c4c4c4",
                         color: "black",
                         fontWeight: "bold",
-                        minWidth: "fit-content",
+                        width: column.width,
                       }}
                     >
                       <span style={{ display: "block", flexWrap: "nowrap" }}>
@@ -68,12 +68,14 @@ const App = () => {
               return (
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => {
+                    console.log(cell);
                     return (
                       <td
                         {...cell.getCellProps()}
                         style={{
                           padding: "10px",
                           borderBottom: "1px solid #C4c4c4",
+                          width: cell.column.width,
                         }}
                       >
                         {cell.render("Cell")}

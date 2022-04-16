@@ -9,7 +9,6 @@ const getSort =
   };
 
 const sortType = (rowA, rowB, id) => {
-  console.log(rowA);
   return toInt(rowA.values[id]) > toInt(rowB.values[id]) ? 1 : -1;
 };
 
@@ -34,6 +33,7 @@ const columnDefs = [
     Header: "Monthly Payment",
     accessor: "balloon_payment",
     sortType,
+    width: 200,
   },
 
   {
@@ -55,6 +55,7 @@ const columnDefs = [
     Header: "Vehicle Type",
     accessor: "vehicle_type",
     sortType: textFilter,
+    width: 200,
   },
 ];
 
