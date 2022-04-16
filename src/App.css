@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+tbody {
+  display: block;
+  height: 80vh;
+  overflow: auto;
+}
+
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* even columns width , fix width of table too*/
+}
