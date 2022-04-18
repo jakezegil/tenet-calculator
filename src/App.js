@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div>
       <h1 style={{ textAlign: "center", margin: 32, marginBottom: 0 }}>
-        Get a new Electric Vehicle for less than $300 a month with Tenet!
+        Get a new Electric Vehicle for less than $350 a month with Tenet!
       </h1>
       <div style={{ padding: 36 }}>
         <table
